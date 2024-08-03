@@ -1,4 +1,5 @@
 package com.quran.tafsir.Adapters;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -9,7 +10,6 @@ import java.util.List;
 public class Surah {
     private String s_name;
     private List<AyaText> aya_texts;
-    private String image_url;
 
     public Surah(JSONObject obj) throws JSONException {
         this.s_name = obj.getString("s_name");
@@ -21,7 +21,6 @@ public class Surah {
             JSONObject ayaObj = ayaArray.getJSONObject(i);
             this.aya_texts.add(new AyaText(ayaObj));
         }
-        this.image_url = obj.getString("image_url");
     }
 
     public String getSName() {
@@ -32,10 +31,4 @@ public class Surah {
         return aya_texts;
     }
 
-    public String getImageUrl() {
-        return image_url;
-    }
-
 }
-
-
