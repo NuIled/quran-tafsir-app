@@ -16,5 +16,11 @@ public class RedirectActivity extends AppCompatActivity {
             Intent intent = new Intent(RedirectActivity.this, MainActivity.class);
             startActivity(intent);
         });
+
+        TextView goToTafsir = findViewById(R.id.app);
+        goToTafsir.setOnClickListener(v -> {
+            Intent intent = new Intent(RedirectActivity.this, QuestionDetailActivity.class);
+            startActivity(intent);
+        });
     }
 }

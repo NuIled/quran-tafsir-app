@@ -15,14 +15,15 @@
         android:padding="8dp">
 
         <ImageView
-            android:src="@mipmap/ic_launcher"
             android:id="@+id/img"
-            android:layout_marginLeft="100dp"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="100dp"
+            android:src="@mipmap/ic_launcher"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            cardview:layout_constraintHorizontal_bias="0.973" />
 
         <TextView
             android:id="@+id/title"

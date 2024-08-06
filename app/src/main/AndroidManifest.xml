@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".SurahDetailActivity"/>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".QuestionDetailActivity"/>
     </application>
 
 </manifest>
