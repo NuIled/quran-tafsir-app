@@ -23,6 +23,8 @@
         <activity android:name=".SurahDetailActivity"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".QuestionDetailActivity"/>
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".Tafsir_Activity"/>
     </application>
 
 </manifest>

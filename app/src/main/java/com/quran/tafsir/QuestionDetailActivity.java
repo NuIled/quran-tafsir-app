@@ -9,7 +9,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.quran.tafsir.Models.Question;
@@ -51,8 +53,10 @@ public class QuestionDetailActivity extends AppCompatActivity {
 
         loadQuestions();
 
-        if (questions == null) {
-            Log.e("QuestionDetailActivity", "Questions list is null");
+        if (questions == null || questions.isEmpty()) {
+            Log.e("QuestionDetailActivity", "Questions list is null or empty");
+            Toast.makeText(this, "Error loading questions", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         showQuestion(currentQuestionIndex);
@@ -85,6 +89,11 @@ public class QuestionDetailActivity extends AppCompatActivity {
     }
 
     private void showQuestion(int index) {
+        if (index >= questions.size() || index < 0) {
+            Log.e("QuestionDetailActivity", "Invalid question index: " + index);
+            return;
+        }
+
         Question question = questions.get(index);
         questionTextView.setText(question.getQuestion());
 
@@ -102,9 +111,7 @@ public class QuestionDetailActivity extends AppCompatActivity {
     }
 
     private void checkAnswer() {
-        int selectedId = -1;
-        selectedId = optionsGroup.getCheckedRadioButtonId();
-        Log.e("ssss",selectedId + "ss");
+        int selectedId = optionsGroup.getCheckedRadioButtonId();
         if (selectedId == -1) {
             // No option selected
             Toast.makeText(this, "Please select an option", Toast.LENGTH_SHORT).show();
@@ -161,7 +168,7 @@ public class QuestionDetailActivity extends AppCompatActivity {
     }
 
     private void showResults() {
-        Intent intent = new Intent(QuestionDetailActivity.this, ResultsActivity.class);
+        Intent intent = new Intent(QuestionDetailActivity.this, ResultActivity.class);
         intent.putExtra("score", score);
         intent.putExtra("totalQuestions", questions.size());
         startActivity(intent);

@@ -13,7 +13,7 @@ public class RedirectActivity extends AppCompatActivity {
 
         TextView goToTafsirTextView = findViewById(R.id.goToTafsirTextView);
         goToTafsirTextView.setOnClickListener(v -> {
-            Intent intent = new Intent(RedirectActivity.this, MainActivity.class);
+            Intent intent = new Intent(RedirectActivity.this, Tafsir_Activity.class);
             startActivity(intent);
         });
 

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Tafsir</string>
+    <string name="tafsir">تفسير</string>
+    <string name="test">اختبار</string>
 </resources>

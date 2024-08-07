@@ -6,7 +6,6 @@
     android:padding="16dp"
     android:background="#2D3325"
     >
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:text="@string/tafsir"
+            android:text="تفسير القرآن لابن كثير"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -56,12 +55,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:text="@string/test"
+            android:text="تفسير القرآن السعدي"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -84,7 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:text="@string/test"
+            android:text="تفسير الطبري"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
