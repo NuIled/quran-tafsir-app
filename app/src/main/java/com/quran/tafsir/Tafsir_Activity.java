@@ -15,7 +15,7 @@ public class Tafsir_Activity extends AppCompatActivity{
 
             TextView goToTafsirTextView = findViewById(R.id.goToTafsirTextView);
             goToTafsirTextView.setOnClickListener(v -> {
-                Intent intent = new Intent(Tafsir_Activity.this, MainActivity.class);
+                Intent intent = new Intent(Tafsir_Activity.this, AudioActivity.class);
                 startActivity(intent);
             });
 

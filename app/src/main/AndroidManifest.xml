@@ -25,6 +25,7 @@
         <activity android:name=".QuestionDetailActivity"/>
         <activity android:name=".ResultActivity" />
         <activity android:name=".Tafsir_Activity"/>
+        <activity android:name=".AudioActivity"/>
     </application>
 
 </manifest>
