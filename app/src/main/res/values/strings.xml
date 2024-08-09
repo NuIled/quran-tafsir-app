@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Tafsir</string>
     <string name="tafsir">تفسير</string>
-    <string name="test">اختبار</string>
+    <string name="test">اختبار القران</string>
     <string name="azkar">اذكار</string>
     <string name="play">Play</string>
     <string name="pause">Pause</string>

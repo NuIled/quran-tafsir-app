@@ -39,11 +39,11 @@ public class AudioAdapter extends RecyclerView.Adapter<AudioAdapter.AudioViewHol
         holder.nameTextView.setText(soar.getName());
 
         holder.playButton.setOnClickListener(v -> {
-            if (mediaPlayer != null) {
-                mediaPlayer.release();
-            }
-            mediaPlayer = new MediaPlayer();
             try {
+                if (mediaPlayer != null) {
+                    mediaPlayer.release();
+                }
+                mediaPlayer = new MediaPlayer();
                 mediaPlayer.setDataSource(soar.getUrl());
                 mediaPlayer.prepare();
                 mediaPlayer.start();

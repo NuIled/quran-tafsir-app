@@ -62,7 +62,7 @@
             android:src="@mipmap/ic_launcher" />
 
         <TextView
-            android:id="@+id/appito"
+            android:id="@+id/app"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="16dp"
@@ -90,7 +90,7 @@
             android:src="@mipmap/ic_launcher" />
 
         <TextView
-            android:id="@+id/app"
+            android:id="@+id/appito"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="16dp"

@@ -22,5 +22,11 @@ public class RedirectActivity extends AppCompatActivity {
             Intent intent = new Intent(RedirectActivity.this, QuestionDetailActivity.class);
             startActivity(intent);
         });
+
+        TextView Azkar = findViewById(R.id.appito);
+        Azkar.setOnClickListener(v -> {
+            Intent intent = new Intent(RedirectActivity.this, AzkarActivity.class);
+            startActivity(intent);
+        });
     }
 }
