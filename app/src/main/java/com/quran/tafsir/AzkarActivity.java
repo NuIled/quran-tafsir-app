@@ -31,7 +31,6 @@ public class AzkarActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.categoriesRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Load JSON from assets
         String json = loadJSONFromAsset(this, "adhkar.json");
         parseJSON(json);
 

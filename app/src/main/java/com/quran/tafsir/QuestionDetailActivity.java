@@ -152,16 +152,16 @@ public class QuestionDetailActivity extends AppCompatActivity {
             feedbackTextView.setText("Incorrect! Correct answer: " + correctAnswer);
         }
 
-        feedbackTextView.setVisibility(View.VISIBLE);  // Show feedback text
-        continueButton.setVisibility(View.VISIBLE);    // Show continue button
-        submitButton.setEnabled(false);  // Disable submit button
+        feedbackTextView.setVisibility(View.VISIBLE);  
+        continueButton.setVisibility(View.VISIBLE);    
+        submitButton.setEnabled(false);  
     }
 
     private void continueToNextQuestion() {
         if (currentQuestionIndex < questions.size() - 1) {
             currentQuestionIndex++;
             showQuestion(currentQuestionIndex);
-            submitButton.setEnabled(true);  // Re-enable submit button for next question
+            submitButton.setEnabled(true);
         } else {
             showResults();
         }

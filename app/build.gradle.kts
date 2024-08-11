@@ -32,13 +32,16 @@ android {
 }
 
 dependencies {
-    implementation ("com.google.android.material:material:1.2.1")
-    implementation ("androidx.recyclerview:recyclerview:1.3.0")
-    implementation ("androidx.cardview:cardview:1.0.0")
-    implementation ("com.github.bumptech.glide:glide:4.14.2")
-    annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
-    implementation ("com.google.code.gson:gson:2.8.8")
-    implementation ("com.google.android.material:material:1.2.1")
+    implementation ("com.google.android.material:material:1.12.0")
+    implementation(libs.play.services.ads)
+    implementation ("androidx.recyclerview:recyclerview:1.3.2")
+    implementation (libs.cardview)
+    implementation (libs.glide)
+    implementation(libs.volley)
+    annotationProcessor (libs.compiler)
+    implementation ("com.google.code.gson:gson:2.10.1")
+    implementation (libs.google.material.v121)
+    implementation (libs.multidex)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)

@@ -27,13 +27,10 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Load JSON from assets
         String json = AssetUtils.loadJSONFromAsset(this, "data.json");
 
-        // Parse JSON data
         parseJSON(json);
 
-        // Set up the adapter
         cardAdapter = new CardAdapter(this, surahList);
         recyclerView.setAdapter(cardAdapter);
     }
