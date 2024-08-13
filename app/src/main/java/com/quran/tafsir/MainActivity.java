@@ -1,10 +1,13 @@
 package com.quran.tafsir;
 import android.os.Bundle;
+import android.widget.RelativeLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.quran.tafsir.Adapters.CardAdapter;
 import com.quran.tafsir.Adapters.Surah;
+import com.quran.tafsir.Ads.AdmobAds;
 import com.quran.tafsir.utils.AssetUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private CardAdapter cardAdapter;
     private List<Surah> surahList = new ArrayList<>();
+    RelativeLayout adbanner;
+    AdmobAds admobAds ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
         String json = AssetUtils.loadJSONFromAsset(this, "data.json");
 
         parseJSON(json);
+
+        adbanner = findViewById(R.id.Banner);
+
+        admobAds = new AdmobAds(this);
+        admobAds.showBanner(adbanner);
 
         cardAdapter = new CardAdapter(this, surahList);
         recyclerView.setAdapter(cardAdapter);

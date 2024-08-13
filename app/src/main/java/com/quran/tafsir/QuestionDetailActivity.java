@@ -1,12 +1,14 @@
 package com.quran.tafsir;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.quran.tafsir.Ads.AdmobAds;
 import com.quran.tafsir.Models.Question;
 
 import org.json.JSONArray;
@@ -39,6 +42,8 @@ public class QuestionDetailActivity extends AppCompatActivity {
     private List<Question> questions = new ArrayList<>();
     private int currentQuestionIndex = 0;
     private int score = 0;
+    AdmobAds admobAds ;
+    RelativeLayout adbanner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +55,10 @@ public class QuestionDetailActivity extends AppCompatActivity {
         submitButton = findViewById(R.id.submitButton);
         continueButton = findViewById(R.id.continueButton);
         feedbackTextView = findViewById(R.id.feedbackTextView);
+        adbanner = findViewById(R.id.Banne);
+
+        admobAds = new AdmobAds(this);
+        admobAds.showBanner(adbanner);
 
         loadQuestions();
 
@@ -101,6 +110,7 @@ public class QuestionDetailActivity extends AppCompatActivity {
         for (Question.Option option : question.getOptions()) {
             RadioButton radioButton = new RadioButton(this);
             radioButton.setText(option.getAnswer());
+            radioButton.setTextColor(Color.WHITE); // Set text color to white
             radioButton.setId(View.generateViewId());
             optionsGroup.addView(radioButton);
         }

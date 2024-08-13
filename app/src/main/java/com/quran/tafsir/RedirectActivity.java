@@ -39,14 +39,24 @@ public class RedirectActivity extends AppCompatActivity {
 
         TextView goToTafsir = findViewById(R.id.app);
         goToTafsir.setOnClickListener(v -> {
+            admobAds.showInter(new AdmobAds.AdFinished() {
+            @Override
+            public void onAdFinished() {
             Intent intent = new Intent(RedirectActivity.this, QuestionDetailActivity.class);
             startActivity(intent);
+        }
+        });
         });
 
         TextView Azkar = findViewById(R.id.appito);
         Azkar.setOnClickListener(v -> {
-            Intent intent = new Intent(RedirectActivity.this, AzkarActivity.class);
-            startActivity(intent);
+            admobAds.showInter(new AdmobAds.AdFinished() {
+                @Override
+                public void onAdFinished() {
+                    Intent intent = new Intent(RedirectActivity.this, AzkarActivity.class);
+                    startActivity(intent);
+                }
+            });
         });
 
         more = findViewById(R.id.more);

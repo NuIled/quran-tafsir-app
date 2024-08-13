@@ -3,8 +3,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.quran.tafsir.Ads.AdmobAds;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -13,6 +16,8 @@ public class ResultActivity extends AppCompatActivity {
     private TextView additionalInfoTextView;
     private Button tryAgainButton;
     private Button returnHomeButton;
+    AdmobAds admobAds ;
+    RelativeLayout adbanner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,11 @@ public class ResultActivity extends AppCompatActivity {
         additionalInfoTextView = findViewById(R.id.additionalInfo);
         tryAgainButton = findViewById(R.id.tryAgainButton);
         returnHomeButton = findViewById(R.id.returnHomeButton);
+
+        adbanner = findViewById(R.id.Banner);
+
+        admobAds = new AdmobAds(this);
+        admobAds.showBanner(adbanner);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {

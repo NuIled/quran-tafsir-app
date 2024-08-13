@@ -2,6 +2,7 @@ package com.quran.tafsir;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.quran.tafsir.Adapters.AyaAdapter;
 import com.quran.tafsir.Adapters.AyaText;
+import com.quran.tafsir.Ads.AdmobAds;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,6 +25,8 @@ public class SurahDetailActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private AyaAdapter adapter;
     private List<AyaText> ayaTextList;
+    RelativeLayout adbanner;
+    AdmobAds admobAds ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,10 @@ public class SurahDetailActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.ayaRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adbanner = findViewById(R.id.Banner);
+
+        admobAds = new AdmobAds(this);
+        admobAds.showBanner(adbanner);
 
         Intent intent = getIntent();
         String sName = intent.getStringExtra("s_name");

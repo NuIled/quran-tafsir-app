@@ -3,11 +3,14 @@ package com.quran.tafsir;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Bundle;
+import android.widget.RelativeLayout;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.quran.tafsir.Adapters.AzkarAdapter;
+import com.quran.tafsir.Ads.AdmobAds;
 import com.quran.tafsir.Models.AudioItem;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -22,7 +25,8 @@ public class AzkarActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private AzkarAdapter audioAdapter;
     private List<AudioItem> audioList = new ArrayList<>();
-
+    RelativeLayout adbanner;
+    AdmobAds admobAds ;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +37,10 @@ public class AzkarActivity extends AppCompatActivity {
 
         String json = loadJSONFromAsset(this, "adhkar.json");
         parseJSON(json);
+        adbanner = findViewById(R.id.Banner);
 
+        admobAds = new AdmobAds(this);
+        admobAds.showBanner(adbanner);
         audioAdapter = new AzkarAdapter(this, audioList);
         recyclerView.setAdapter(audioAdapter);
     }

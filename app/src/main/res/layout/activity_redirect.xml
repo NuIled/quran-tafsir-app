@@ -25,34 +25,37 @@
         <TextView
             android:id="@+id/rate"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="@string/tafsir"
-            android:drawableTop="@drawable/ic_launcher_foreground"
-            android:textColor="@android:color/black"
+            android:text="فضلا قيم التطبيق"
+            android:drawableTop="@mipmap/rate"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:layout_weight="1"
+            android:textAlignment="center"
             android:textStyle="bold" />
         <TextView
             android:id="@+id/share"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:drawableTop="@drawable/ic_launcher_foreground"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/whatts"
             android:padding="16dp"
-            android:text="@string/tafsir"
+            android:text="شارك التطبيق"
             android:layout_weight="1"
-            android:textColor="@android:color/black"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
         <TextView
             android:id="@+id/more"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:padding="16dp"
-            android:drawableTop="@drawable/ic_launcher_foreground"
-            android:text="@string/tafsir"
+            android:drawableTop="@mipmap/more"
+            android:text="تطبيقات ننصح بها"
             android:layout_weight="1"
-            android:textColor="@android:color/black"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -80,7 +83,7 @@
             android:layout_height="match_parent"
             android:padding="16dp"
             android:text="@string/tafsir"
-            android:textColor="@android:color/black"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
@@ -109,7 +112,7 @@
             android:layout_height="match_parent"
             android:padding="16dp"
             android:text="@string/test"
-            android:textColor="@android:color/black"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -137,7 +140,7 @@
             android:layout_height="match_parent"
             android:padding="16dp"
             android:text="@string/azkar"
-            android:textColor="@android:color/black"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
 

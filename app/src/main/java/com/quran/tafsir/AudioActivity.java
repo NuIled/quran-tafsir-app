@@ -2,6 +2,7 @@ package com.quran.tafsir;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.quran.tafsir.Adapters.AudioAdapter;
+import com.quran.tafsir.Ads.AdmobAds;
 import com.quran.tafsir.Models.Tafsir;
 
 import org.json.JSONArray;
@@ -26,6 +28,9 @@ public class AudioActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private AudioAdapter audioAdapter;
+    RelativeLayout adbanner;
+    AdmobAds admobAds ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +39,10 @@ public class AudioActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adbanner = findViewById(R.id.Banner);
 
+        admobAds = new AdmobAds(this);
+        admobAds.showBanner(adbanner);
         // Load data and set adapter
         loadTafsirData();
     }
