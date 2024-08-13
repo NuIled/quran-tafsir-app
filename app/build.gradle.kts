@@ -38,6 +38,7 @@ dependencies {
     implementation (libs.cardview)
     implementation (libs.glide)
     implementation(libs.volley)
+    implementation ("com.facebook.android:audience-network-sdk:6.+")
     annotationProcessor (libs.compiler)
     implementation ("com.google.code.gson:gson:2.10.1")
     implementation (libs.google.material.v121)
