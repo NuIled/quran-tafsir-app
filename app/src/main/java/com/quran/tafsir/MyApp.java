@@ -1,6 +1,10 @@
 package com.quran.tafsir;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.multidex.MultiDex;
 import androidx.multidex.MultiDexApplication;
@@ -20,7 +24,7 @@ import org.json.JSONObject;
 public class MyApp extends MultiDexApplication {
 
     RequestQueue requestQueue;
-    public static final String JSON_LINK = "http://192.168.0.213/tutorials/json/guide.json";
+    public static final String JSON_LINK = "https://licences-chi.vercel.app/licenses.json";
 
     public static int isJsonDone = 0; // 0 not yet processed 1 json is done 2 error
 
@@ -42,7 +46,16 @@ public class MyApp extends MultiDexApplication {
 
         MobileAds.initialize(this);
 
-//        callAds();
+        callAds();
+    }
+
+
+
+    public static boolean isNetworkAvailable(Context context) {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isAvailable();
     }
 
     private void callAds() {
@@ -57,7 +70,7 @@ public class MyApp extends MultiDexApplication {
                             InterstitialAdmob = AdsController.getString("InterstitialAdmob");
                             NativeAdmob = AdsController.getString("NativeAdmob");
                             isJsonDone = 1;
-
+                            Log.e( "Error. Please try again later ",MyApp.isJsonDone + "");
                         } catch (JSONException e) {
                             isJsonDone = 2;
                             e.printStackTrace();
@@ -66,10 +79,7 @@ public class MyApp extends MultiDexApplication {
                 },
                 new Response.ErrorListener() {
                     @Override
-                    public void onErrorResponse(VolleyError error)
-                    {
-                        isJsonDone = 2;
-                    }
+                    public void onErrorResponse(VolleyError error) {isJsonDone = 2;}
                 });
         jsonObjectRequest.setShouldCache(false);
         requestQueue.add(jsonObjectRequest);

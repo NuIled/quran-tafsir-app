@@ -1,4 +1,6 @@
 package com.quran.tafsir;
+import static com.quran.tafsir.MyApp.isNetworkAvailable;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
@@ -6,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -47,16 +50,19 @@ public class RedirectActivity extends AppCompatActivity {
         }
         });
         });
-
         TextView Azkar = findViewById(R.id.appito);
         Azkar.setOnClickListener(v -> {
+            if (isNetworkAvailable(this)){
             admobAds.showInter(new AdmobAds.AdFinished() {
                 @Override
                 public void onAdFinished() {
                     Intent intent = new Intent(RedirectActivity.this, AzkarActivity.class);
                     startActivity(intent);
                 }
-            });
+            });}
+            else {
+                Toast.makeText(this, " تحتاج إلى الإنترنت للوصول إلى المحتوى", Toast.LENGTH_SHORT).show();
+            }
         });
 
         more = findViewById(R.id.more);
@@ -73,7 +79,7 @@ public class RedirectActivity extends AppCompatActivity {
                 Intent whatsappIntent = new Intent(Intent.ACTION_SEND);
                 whatsappIntent.setType("text/plain");
                 whatsappIntent.setPackage("com.whatsapp");
-                whatsappIntent.putExtra(Intent.EXTRA_TEXT, "The text you wanted to share");
+                whatsappIntent.putExtra(Intent.EXTRA_TEXT,  "http://play.google.com/store/apps/details?id=" + getPackageName() +" أريد أن أشارك معك أفضل تطبيق لتفسير القرآن وجدته في المتجر!");
                 try {
                     startActivity(whatsappIntent);
                 } catch (android.content.ActivityNotFoundException ex) {
